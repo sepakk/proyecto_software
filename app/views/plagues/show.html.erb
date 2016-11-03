@@ -1,0 +1,33 @@
+<div class="content">
+	<p id="notice"><%= notice %></p>
+
+	<h1>
+	  <%= @plague.name %>
+	</h1>
+
+	<p>
+	  <%= @plague.desc %>
+	</p>
+	<div class="links_container">
+
+		<% if !current_user.nil? && current_user.isadmin %>
+			<%= link_to 'Editar', edit_plague_path(@plague) %> |
+		<% end %>
+		<%= link_to 'Volver', plagues_path %>
+	</div>
+<br><br>
+	<h2>Plantas Afectadas por la Plaga</h2>
+	<% @plague.plants.each do |plant| %>
+    <div class="plant_container">
+      <div class="img_container">
+        <div class="image_div" style="background-image: url('<%= plant.avatar.url(:medium) %>');"> </div>
+      </div>
+      <div class="info">
+        <h2><%= plant.name %> </h2>
+        <p><%= plant.desc %></p>
+        <%= link_to 'Ver', plant, :class => "show" %>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+</div>

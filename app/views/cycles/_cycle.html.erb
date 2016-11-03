@@ -1,0 +1,26 @@
+
+<div class="plant_container">
+  <div class="img_container">
+    <div class="image_div" style="background-image: url('<%= cycle.avatar.url(:medium) %>');"> </div>
+  </div>
+  <div class="info">
+    <p><%= cycle.desc %></p>
+    <p><strong>Tiempo: </strong> <%= cycle.time %> días</p>
+    <ol>
+      <%= render cycle.steps %>
+    </ol>
+  </div>
+  <% if controller_name == "plants" %>
+  <% if !current_user.nil? && current_user.isadmin %>
+
+      <div class="buttons">
+        <%= link_to 'Editar', edit_plant_cycle_path(cycle.plant, cycle), :class => "expand show " %>
+        <%= link_to 'Eliminar', [cycle.plant, cycle],
+                      method: :delete,
+                      class: "show delete expand",
+                      data: { confirm: 'Estás seguro de borrar el ciclo de la planta?' } %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<hr>

@@ -1,0 +1,12 @@
+<%= form_for([@plant,  @plant.plant_diseases.build]) do |f| %>
+
+	<div class="field">
+		<%= f.collection_select(:disease_id, Disease.all, :id, :name) %>
+	</div>
+
+	<div class="field">
+		<%= f.submit "Añadir Enfermedad", :class=>"minubutton" %>
+		<%= link_to "Nueva Enfermedad", new_disease_path, :class=>"minlink" %>
+		
+	</div>
+<% end %>

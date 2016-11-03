@@ -1,0 +1,37 @@
+<div class="title_box">
+	<a class="img_cont" href="/">
+		<%= image_tag("logo.png", :class => "logo_image") %>
+	</a>
+	<nav>
+		<ul>
+			<% if user_signed_in? %>
+				<li>
+					<%= link_to 'Mis Cultivos', user_crops_path(current_user)  %>  
+					<ul class="dropdown">
+						<li><%= link_to('Enfermedades', diseases_path)  %></li>
+						<li><%= link_to('Plagas', plagues_path)  %></li>
+					</ul>
+				</li>
+			<% end %>
+			<li>
+				<%= link_to('Acerca', plants_path)  %>  
+			</li>
+			
+			<% if !user_signed_in? %>
+				<li>
+					<%= link_to('Iniciar Sesión', new_user_session_path)  %>  
+				</li>
+			<% else %>
+				<li>
+					<%= link_to  user_path(current_user) do  %>  
+						<%= image_tag current_user.avatar.url(:thumb), :class => "user_icon" %>
+					<% end  %>  
+					<ul class="dropdown">
+						<li> 	 <%= link_to('Cerrar Sesión', destroy_user_session_path, :method => :delete) %> </li>       
+					</ul>
+				</li>
+			<% end %>
+		</ul>
+
+	</nav>
+</div>

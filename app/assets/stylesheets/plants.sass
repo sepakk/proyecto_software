@@ -1,0 +1,262 @@
+$green: #84ad52
+$dark-green: #536D34
+$darkish-green: #719346
+$ligh-green: #BEF976
+$lightish-green: #8EBA58
+$des-green: #d6f2bd
+$red: #F9886A
+$darkish-red: #B9654F
+$purple: #9F52AD
+$purple-dark: #561A60
+// AÑADIR BOTON
+
+
+.half
+	width: 25%
+	margin: 10px auto
+
+.circle_delete
+	display: inline-block 
+	background: $red
+	border-radius: 15px
+	line-height: 30px
+	width: 30px
+	height: 30px
+	color: white
+	text-decoration: none
+	transition: all 300ms ease-in-out
+	&:hover
+		transform: scale(1.1)
+		background-color: $darkish-red
+
+
+.add
+	display: block
+	float: top
+	background-color: $green
+	font-family: "Montserrat"
+	text-transform: uppercase
+	font-weight: 700
+	color: white
+	text-decoration: none
+	border: 0
+	padding: 10px
+	font-size: 18px
+	text-align: center
+	margin: 15px auto
+	width: 200px
+	transition: all 300ms ease-in-out
+	&:hover
+		transform: scale(1.1)
+		background-color: $darkish-green
+.purple
+	background-color: $purple
+	&:hover
+		transform: scale(1.1)
+		background-color: $purple-dark
+
+.expand
+	width: auto
+
+.crop_container
+	display: block
+	margin: 0 5px
+	padding: 5px
+	text-decoration: none
+	hr
+		border-top: 1px
+		color: gray
+	&:visited
+		color: black
+	&:hover
+		background-color:  #EDEDED
+
+.minlink
+	text-decoration: none
+	color: $dark-green
+	font-size: 13px
+	transition: all 200ms ease-in-out
+	&:hover
+		color: $ligh-green
+
+.minubutton
+	display: block
+	background-color: $green
+	font-family: "Montserrat"
+	font-size: 12px
+	text-transform: uppercase
+	font-weight: 700
+	color: white
+	text-decoration: none
+	border: 0
+	padding: 5px
+	text-align: center
+	margin: 5px auto
+	transition: all 300ms ease-in-out
+	&:hover
+		transform: scale(1.1)
+		background-color: $darkish-green
+
+// INDEX CONTAINER
+
+.plant_container
+	display: flex
+	flex-wrap: nowrap
+	align-items: center
+	justify-content: center
+	text-align: center
+
+	.show
+		display: block
+		background-color: $green
+		font-family: "Montserrat"
+		text-transform: uppercase
+		font-weight: 700
+		color: white
+		text-decoration: none
+		border: 0
+		width: 40px
+		padding: 10px
+		font-size: 18px
+		margin: 15px auto
+		transition: all 300ms ease-in-out
+		&:hover
+			transform: scale(1.1)
+			background-color: $darkish-green
+
+	.delete
+		background-color: $red
+		&:hover
+			background-color: $darkish-red
+
+	.expand
+		margin-left: 20px
+		width: auto
+
+	&:hover
+		background: #EDEDED
+
+	.info
+		text-align: center
+		max-width: 300px
+		padding-left: 20px
+
+//DISEASE PLAGUE CONTAINER
+
+.pd_container
+	padding: 10px
+
+	h4
+		padding: 5px
+		color: $darkish-green
+
+	&:hover
+		background: #EDEDED
+
+//SHOW VIEW
+
+.img_container
+	display: flex
+	justify-content: center
+	.image_div
+		width: 100px
+		height: 100px
+		box-sizing: border-box
+		max-width: 100px
+		max-height: 100px
+		transition: transform 200ms ease-in-out
+		border-radius: 50%
+		margin: 10px
+		box-shadow: 0 1px 2px rgba(0,0,0,0.15)
+		background:
+			repeat: no-repeat
+			size: cover
+			position: top center
+	.shadow
+		box-shadow: 5px 5px 8px rgba(0, 0, 0, .6)
+
+.desc
+	max-width: 500px
+	padding: 10px 30%
+
+
+// FORM
+
+.form_container
+	display: block
+	margin: 0 auto
+	padding: 40px 25%
+	min-height: 90vh
+	background-color: rgba(255,255,255,0.9)
+	text-align: center
+	position: relative
+
+	.field_avatar
+		display: flex
+		font-family: Helvetica
+		font-size: 20px
+		align-items: center
+		margin: 15px 0
+		justify-content: center
+
+	[type="email"], [type="password"], [type="text"] , [type="date"], [type="number"], textarea
+		margin: 15px auto
+		font-size: 20px
+		text-align: center
+		font-family: Helvetica
+		padding: 5px
+		width: 90%
+		display: block
+
+	.inputfile
+		width: 0.1px
+		height: 0.1px
+		opacity: 0
+		overflow: hidden
+		position: absolute
+		z-index: -1
+
+	.upload
+		padding: 5px
+		display: block
+		cursor: pointer
+		text-align: center
+		background-color: $green
+		font-family: "Montserrat"
+		text-overflow: ellipsis
+		white-space: nowrap
+		overflow: hidden
+		max-width: 400px
+		text-transform: uppercase
+		font-weight: 700
+		color: white
+		border: 0
+		font-size: 18px
+		margin: 10px
+		transition: all 300ms ease-in-out
+		&:hover
+			transform: scale(1.1)
+			background-color: $darkish-green
+
+	[type="submit"]
+		cursor: pointer
+		padding: 5px
+		display: block
+		background-color: $green
+		font-family: "Montserrat"
+		text-transform: uppercase
+		font-weight: 700
+		color: white
+		border: 0
+		font-size: 18px
+		margin: 15px auto
+		transition: all 300ms ease-in-out
+		&:hover
+			transform: scale(1.1)
+			background-color: $darkish-green
+
+
+// SUBFORM
+
+.sub_form_container
+	min-height: auto

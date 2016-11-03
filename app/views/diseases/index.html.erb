@@ -1,0 +1,23 @@
+<div class="content">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Enfermedades</h1>
+
+
+
+
+    <% @diseases.each do |disease| %>
+    <div class="plant_container">
+      <div class="info">
+        <h2><%= disease.name %> </h2>
+        <p><%= disease.desc %></p>
+        <%= link_to 'Ver', disease, :class => "show" %>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+
+  <% if !current_user.nil? && current_user.isadmin %>
+    <%= link_to 'Agregar Enfermedad', new_disease_path, :class => "add" %>
+  <% end %>
+</div>

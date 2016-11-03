@@ -1,0 +1,33 @@
+
+
+<%= form_for(plant) do |f| %>
+  <% if plant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
+
+      <ul>
+      <% plant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, :placeholder => "Nombre", :autofocus => true %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :desc, :placeholder => "Descripcion"%>
+  </div>
+
+   <div class="field field_avatar">
+    <%= f.label :avatar, "Foto:" %>
+    <%= f.file_field :avatar, :class => "inputfile" %><label for="plant_avatar" class="upload">Seleccionar Archivo</label>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Agregar Planta" %>
+  </div>
+<% end %>
+

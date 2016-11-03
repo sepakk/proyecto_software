@@ -1,0 +1,9 @@
+<%= link_to user_crop_path(current_user, crop), :class => "crop_container" do %>
+	<h3><%= crop.plant_name %></h3>
+	<% if crop.has_started? %>
+		<p><strong>Estado:</strong> <% crop.last_cycle.desc %></p>
+	<% else %>
+		<p><strong>Estado:</strong> Sin iniciar</p>
+	<% end %>
+	<hr>
+<% end %>

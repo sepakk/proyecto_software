@@ -1,0 +1,60 @@
+<h1>
+  <%= @plant.name %>
+</h1>
+<div class="content">
+	<div class="img_container">
+		<div class="image_div" style="background-image: url('<%= @plant.avatar.url(:medium) %>');"> </div>
+	</div>
+	
+	<p class="desc" align="center">
+	  <%= @plant.desc %>
+	</p>
+
+	<%= button_to "Agregar a Mis Cultivos", crops_path(plant_id: @plant.id, :method => :post), :class => "add expand"%>
+
+	<div class="col_container">
+		<div class="col">
+			<h3>Enfermedades</h3>
+			<% if @plant.diseases.any? %>
+				<%= render @plant.plant_diseases %>
+			<% else %>
+				<p>No se tienen registros de Enfermedades.</p>
+			<% end %>
+			<hr class="half"></hr>
+			<% if !current_user.nil? && current_user.isadmin %>
+				<%= render "plant_diseases/form" %>
+			<% end %>
+			<h3>Plagas</h3>
+			<% if @plant.plagues.any? %>
+				<%= render @plant.plant_plagues %>
+			<% else %>
+				<p>No se tienen registros de Plagas.</p>
+			<% end %>
+			<hr class="half"></hr>
+			<% if !current_user.nil? && current_user.isadmin %>
+				<%= render "plant_plagues/form" %>
+			<% end %>
+			
+		</div>
+		<div class="col">
+			<h3>Ciclos de Vida</h3>
+			<%= render @plant.cycles.order(:position) %>
+		</div>
+	</div>	
+	<hr>
+
+	<% if !current_user.nil? && current_user.isadmin %>
+		<div class="admin">
+			<h3>Añadir Nuevo Ciclo</h3>
+			<%= render "cycles/form" %>
+		</div>
+		<hr>
+	<% end %>
+
+	<div class="links_container">
+		<% if !current_user.nil? && current_user.isadmin %>
+			<%= link_to 'Editar', edit_plant_path(@plant) %> |
+		<% end %>
+		<%= link_to 'Atras', plants_path %>
+	</div>
+</div>

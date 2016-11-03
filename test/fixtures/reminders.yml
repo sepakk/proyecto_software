@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  desc: MyText
+  time: 2016-09-21 21:42:31
+  crop: one
+
+two:
+  desc: MyText
+  time: 2016-09-21 21:42:31
+  crop: two

@@ -1,0 +1,20 @@
+<div class="content">
+	<div class="col_container">
+		
+		<div class="col">
+			<div class="img_container">
+				<div class="image_div shadow" style="background-image: url('<%= current_user.avatar.url(:medium) %>');"> </div>
+			</div>
+			<div class="info">
+				<h3><%= current_user.name %></h3>
+				<p><%= current_user.email %></p>
+				<%= link_to "Editar Datos", edit_user_registration_path(current_user), :class => "add" %>
+			</div>
+		</div>
+
+		<div class="col">
+			<h2>Mis Cultivos</h2>
+			<%= render current_user.crops %>
+		</div>
+	</div>
+</div>

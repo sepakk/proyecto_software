@@ -1,0 +1,9 @@
+<h1><%=@crop.plant_name%></h1>
+
+<div class="content">
+	<% if !@crop.has_started? %>
+		<a href="" class="add purple">Iniciar</a>
+	<% end %>
+
+	<%= render @crop.cycles, last: @crop.last_cycle %>
+</div>

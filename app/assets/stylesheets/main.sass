@@ -1,0 +1,270 @@
+$green: #84ad52
+$dark-green: #536D34
+$darkish-green: #719346
+$ligh-green: #BEF976
+$lightish-green: #8EBA58
+$des-green: #d6f2bd
+
+//GENERAL
+
+*	
+	padding: 0
+	margin: 0
+
+body
+	margin: 0
+	padding: 80px 0 0 0
+	background-color: $des-green
+
+h1
+	color: $dark-green
+	text-align: center
+	font-family: Helvetica
+	margin: 20px 0
+	text-shadow: 0 1px 2px rgba(0, 0, 0, .6)
+
+h2, h3, h4
+	color: $dark-green
+	text-align: center
+	font-family: Helvetica
+	padding: 20px 0
+	text-shadow: 0 1px 2px rgba(0, 0, 0, .6)
+
+//NAV AREA
+
+.title_box
+	text-align: center
+	vertical-align: center
+	width: 100%
+	z-index: 1
+	position: fixed
+	margin: 0
+	top: 0
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, .6)
+	left: 0
+	right: 0
+	transition: background-color 300ms ease-in-out
+	background: 
+		color: $green
+
+
+.img_cont
+	width: 130px
+	height: 60px
+	margin: 10px
+	z-index: 4
+	position: absolute
+	display: block
+	left: 0
+	.logo_image
+		width: 130px
+		height: 60px
+		
+
+nav
+	height: 80px
+
+	ul
+		position: relative
+		text-decoration: none
+		justify-content: flex-end
+		display: flex
+		align-items: center
+		flex-wrap: nowrap
+		width: 100%
+		height: 100%
+		margin: 0
+		padding: 0
+
+		li
+			display: table
+			width: 150px
+			height: 100%
+
+			a
+				display: block
+				padding: 0 10px
+				text-decoration: none
+				color: white
+				font-family: Helvetica
+				line-height: 80px
+				font-weight: bold
+				text-align: center
+				vertical-align: middle
+				height: 100%
+				transition: all 200ms ease-in-out
+				&:visited
+					color: white
+				&:hover
+					background: 
+						color: $lightish-green
+
+	.dropdown
+		position: absolute
+		display: block
+		width: auto
+		height: auto
+		padding: 0
+		z-index: 40
+		li
+			display: none
+			z-index: 41
+			background: $green
+
+	li:hover > ul.dropdown li
+		display: block
+
+
+// CONTENT
+
+.content
+	margin: 10px 40px
+	padding: 20px 0
+	background-color: rgba(255,255,255,.9)
+	text-align: center
+	position: relative
+
+// SEARCH BAR
+
+.searchbar
+	display: block
+	text-align: center
+	position: fixed
+	background: $des-green
+	padding: 15px 0
+	width: 100%
+
+.search_container
+	background: white
+	height: 40px
+	margin: 0 auto
+	padding-left: 20px
+	padding-right: 20px
+	border-radius: 20px
+	max-width: 500px
+
+	[type="text"]
+		border: none
+		height: 40px
+		width: 95%
+		font-size: 20px
+		text-align: center
+		&:focus
+			outline: none
+
+	[type="submit"]
+		position: absolute
+		cursor: pointer
+		width: 37px
+		border-radius: 50%
+		height: 37px
+		box-shadow: 2px 2px 6px rgba(0, 0, 0, .6)
+		border: none
+		transition: all 300ms ease-in-out
+		transform: scale(1.1)
+		background:
+			color: $green
+			image: url(image_path("search_icon.png"))
+			repeat: no-repeat
+			size: contain
+		&:hover
+			background:
+				color: $darkish-green
+			transform: scale(1.2)
+
+.search_space
+	margin-top: 70px
+
+//links
+
+.links_container
+	display: flex
+	align-items: center
+	justify-content: center
+
+	a
+		color: #19191b
+		text-decoration: none
+		font-family: Helvetica
+		margin: 10px
+		transition: all 300ms ease-in-out
+		&:hover
+			color: $ligh-green
+
+.wrap
+	flex-direction: column
+	a
+		margin: 0
+
+// USER
+
+.user_icon
+	height: 60px
+	width: 60px
+	vertical-align: middle
+	border-radius: 30px
+	padding-top: 10px
+	margin-left: 45px
+	display: table-cell
+
+// STEPS
+
+.add_s
+	a
+		display: block
+		cursor: pointer
+		font-size: 0
+		width: 37px
+		border-radius: 50%
+		height: 37px
+		box-shadow: 2px 2px 6px rgba(0, 0, 0, .6)
+		border: none
+		transition: all 300ms ease-in-out
+		margin: 0 auto
+		transform: scale(1.1)
+		background:
+			color: $green
+			image: url(image_path("plus.png"))
+			repeat: no-repeat
+			size: contain
+		&:hover
+			background:
+				color: $darkish-green
+			transform: scale(1.2)
+.remove
+	a
+		display: block
+		cursor: pointer
+		font-size: 0
+		width: 37px
+		border-radius: 50%
+		height: 37px
+		box-shadow: 2px 2px 6px rgba(0, 0, 0, .6)
+		border: none
+		transition: all 300ms ease-in-out
+		transform: scale(1.1)
+		background:
+			color: $green
+			image: url(image_path("minus.png"))
+			repeat: no-repeat
+			size: contain
+		&:hover
+			background:
+				color: $darkish-green
+				position: center center
+			transform: scale(1.2)
+
+
+.flex_field
+	display: flex
+	flex-wrap: nowrap
+	align-items: center
+
+// COLUMNS
+
+.col_container
+	display: flex
+
+	.col
+		flex-grow: 1
+		flex-basis: 0

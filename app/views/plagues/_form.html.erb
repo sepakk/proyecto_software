@@ -1,0 +1,25 @@
+<%= form_for(plague) do |f| %>
+  <% if plague.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plague.errors.count, "error") %> prohibited this plague from being saved:</h2>
+
+      <ul>
+      <% plague.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, :placeholder => "Nombre" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :desc, :placeholder => "Descripción" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Añadir Plaga" %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="pd_container">
+	<h4><%= plant_plague.plague.name %></h4>
+	
+	<p><%= plant_plague.plague.desc %>
+		<% if !current_user.nil? && current_user.isadmin %>
+			<%= link_to 'X', [plant_plague.plant, plant_plague],
+			method: :delete,
+			class: "circle_delete",
+			data: { confirm: 'Estás seguro de borrar la plaga de la planta?' } %> 
+		<% end %>
+	</p>
+  	
+</div>

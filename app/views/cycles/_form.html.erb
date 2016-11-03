@@ -1,0 +1,40 @@
+<div class="form_container sub_form_container">
+	<%= form_for([@plant,  @plant.cycles.build]) do |f| %>
+
+		<% initialize_form(f.object) %>
+		<div class="field">
+			<%= f.text_area :desc, :placeholder => "Descripcion"%>
+		</div>
+
+		<div class="field">
+			<%= f.number_field :time, :placeholder => "Tiempo Promedio(dias)"%>
+		</div>
+
+		<div class="field">
+			<%= f.number_field :position, :placeholder => "Posición"%>
+		</div>
+
+		<div class="field field_avatar">
+			<%= f.label :avatar, "Foto:" %>
+			<%= f.file_field :avatar, :class => "inputfile" %><label for="cycle_avatar" class="upload">Seleccionar Archivo</label>
+		</div>
+
+		<hr><br>
+		<p>Añadir Pasos</p>
+		<%= f.fields_for :steps do |ff| %>
+			<%= render 'step', :f => ff   %>
+			
+		<% end %>
+
+		<div class="fields add_s">
+			<p><%= link_to_add_fields "Add requested role", f, :steps %></p>
+		</div>
+
+		<br><hr>
+
+		<div class="field">
+			<%= f.submit "Añadir Ciclo" %>
+		</div>
+	<% end %>
+
+</div>
