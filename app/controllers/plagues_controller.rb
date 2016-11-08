@@ -18,6 +18,7 @@ class PlaguesController < ApplicationController
   end
 
   # GET /plagues/1/edit
+  #editar
   def edit
   end
 
