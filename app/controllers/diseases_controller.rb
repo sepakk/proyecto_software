@@ -19,6 +19,7 @@ class DiseasesController < ApplicationController
   end
 
   # GET /diseases/1/edit
+  #editar
   def edit
   end
 
