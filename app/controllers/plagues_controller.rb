@@ -23,6 +23,7 @@ class PlaguesController < ApplicationController
 
   # POST /plagues
   # POST /plagues.json
+  #Controlador para crear Plagas
   def create
     @plague = Plague.new(plague_params)
 
