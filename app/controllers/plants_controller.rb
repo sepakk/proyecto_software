@@ -1,6 +1,7 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
+  #segunda entrega
   # GET /plants
   # GET /plants.json
   #buscador
