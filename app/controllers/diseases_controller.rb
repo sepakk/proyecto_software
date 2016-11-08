@@ -5,6 +5,7 @@ class DiseasesController < ApplicationController
   # GET /diseases.json
   def index
     @diseases = Disease.all
+
   end
 
   # GET /diseases/1
@@ -23,6 +24,7 @@ class DiseasesController < ApplicationController
 
   # POST /diseases
   # POST /diseases.json
+  #Controlador para crear Enfermedad
   def create
     @disease = Disease.new(disease_params)
 
