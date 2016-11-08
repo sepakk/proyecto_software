@@ -3,6 +3,7 @@ class PlantsController < ApplicationController
 
   # GET /plants
   # GET /plants.json
+  #buscador
   def index
     if params[:page].present?
       @plants = Plant.search(params[:search]).paginate(:page => params[:page], :per_page => 15)
